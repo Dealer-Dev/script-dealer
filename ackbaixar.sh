@@ -8,13 +8,13 @@
 
 # Baixar lsb
 if (! dpkg -l | grep -q "^ii  lsb-release" && [ ! -x "$(command -v lsb_release)" ]); then
-    echo -e "\033[1;33mInstalando pacote basico...\033[0m"    
+    echo -e "\033[1;33m ⚡ Instalando paquetes necesarios 🐇\033[0m"    
     apt-get install lsb-release -y
 fi
 
 # Verificar pacote basico..
 if (! dpkg -l | grep -q "^ii  lsb-release" && [ ! -x "$(command -v lsb_release)" ]); then
-     echo -e "\033[1;33m<ACKHTTP> - Erro Encontrado...\033[0m"      
+     echo -e "\033[1;33m<SCRIPT-DEALER> - Se encontró un error...\033[0m"      
      apt-get check
      echo -e "\033[1;31m<ERRO> Parece que houve um problema com o apt-get!\033[0m"
      rm -f ackbaixar.sh* >/dev/null 2>&1      
@@ -24,7 +24,7 @@ fi
 
 # Verifica se o sistema operacional é Linux
 if [ "$(uname)" != "Linux" ]; then
-    echo -e "\033[1;33mSistema operacional incompatível. Este script só pode ser executado em Linux.\033[0m"
+    echo -e "\033[1;33mSistema operativo incompatible. Este script solo puede ser ejecutado en Linux.\033[0m"
     exit 1
 fi
 
@@ -50,7 +50,7 @@ fi
 
 # Verifica se o script está sendo executado como root
 if [ "$(id -u)" -ne 0 ]; then
-    echo -e "\033[1;33mEste script precisa ser executado como root.\033[0m"
+    echo -e "\033[1;33mEste script debe ser ejecutado como root.\033[0m"
     exit 1
 fi
 
