@@ -76,15 +76,15 @@ esac
 # Verificar se o sistema precisa reiniciar antes de prosseguir
 if [ -f /var/run/reboot-required ]; then
     tput clear && tput cup 0 0
-    echo -e "\033[1;33mReinicialização do sistema é necessária!\033[0m"
-    read -e -p $'\n\033[0;33mReiniciar Agora? [s/n]: \033[0m' reboot_esc
+    echo -e "\033[1;33m🐇 Es necesario reiniciar el sistema 🐇\033[0m"
+    read -e -p $'\n\033[0;33m¿Reiniciar? [s/n]: \033[0m' reboot_esc
     
     if [[ "$reboot_esc" == [SsYyDd]* ]]; then  # Verifica se a entrada começa com S, s, Y, y, D ou d    
         contador=6
         echo -e "\n"
         while [ $contador -ge 0 ]
         do
-            printf "\r\033[1;36mReiniciando Em: \033[0m${contador}s"
+            printf "\r\033[1;36mReiniciando En: \033[0m${contador}s"
             ((contador--))
             sleep 1  # Para adicionar um atraso de 1 segundo entre cada contagem
         done
